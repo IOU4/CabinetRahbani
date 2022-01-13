@@ -1,0 +1,131 @@
+/* start global rules */
+:root {
+    --main-color: #F1FFF5;
+    --main-color-alt: #5AE4A8;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+} 
+a {
+    text-decoration: none;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/* end global rules */
+/* start header */
+.header {
+    background-color: var(--main-color);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+.header .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 30%;
+}
+.header .main-nav {
+    display: flex;
+}
+.header .main-nav > li > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 72px;
+    position: relative;
+    color: black;
+    padding-right: 250px;
+    font-weight: bold;
+}
+.header .icons > i {
+    padding-left: 20px;
+}
+.header .icons > span{
+    font-weight: bold;
+}
+/* start header  */
+/* start footer */
+.footer {
+    padding-top: 50px;
+    padding-bottom: 0px;
+    background-color: white;
+    position: relative;
+    color: black;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main-color);
+}
+.footer .logo {
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: bold;
+    height: 72px;
+}
+.footer .container {
+    position: relative;
+    padding-top: 20px;
+}
+@media (max-width: 767px){
+    .footer .container::before {
+    width: 100%;
+}
+}
+.footer p:first-of-type {
+    font-weight: bold;
+}
+.footer .social-icons i {
+    margin-right: 15px;
+    margin-left: 15px;
+    font-weight: bold;
+}
+.footer .copyright span{
+    font-weight: bold;
+    color: var(--main-color-alt);
+}
+    /* end footer */
