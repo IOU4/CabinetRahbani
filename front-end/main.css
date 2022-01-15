@@ -52,7 +52,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1em;
-  overfolow: hidden;
+  overflow: hidden;
   transition: width 0.2s ease-in;
 }
 nav .avatar-container {
