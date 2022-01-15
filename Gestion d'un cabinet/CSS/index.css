@@ -52,6 +52,9 @@ a {
     background-color: var(--main-color);
     position: sticky;
     top: 0;
+    height: 6rem;
+    display: flex;
+    align-items: center;
     z-index: 1;
 }
 .header .container {
@@ -65,8 +68,8 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30%;
-    height: 30%;
+    width: 20%;
+    height: 20%;
 }
 @media (max-width: 768px) {
     .header .logo {
@@ -135,7 +138,7 @@ a {
     color: var(--main-color);
     font-size: 20px;
     font-weight: bold;
-    height: 72px;
+    height: 96px;
 }
 @media (max-width: 767px){
     .footer .logo {

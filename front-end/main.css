@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 20px;
+}
+
+header {
+  display: flex;
+  padding: 1em 2em 1em 0;
+  justify-content: space-between;
+  align-items: center;
+  height: 4em;
+  width: 100%;
+  background: #F1FFF5;
+  position: fixed;
+  top: 0;
+}
+header .logo-container {
+  width: 30%;
+}
+header .logo-container img {
+  width: 100%;
+}
+header .contact-info {
+  display: flex;
+  gap: 1em;
+}
+header .contact-info div {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+}
+header span {
+  font-size: smaller;
+}
+
+nav {
+  position: fixed;
+  left: 0;
+  top: 23%;
+  height: 16em;
+  width: 4em;
+  background: #F1FFF5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  overfolow: hidden;
+  transition: width 0.2s ease-in;
+}
+nav .avatar-container {
+  width: 100%;
+  display: inherit;
+  align-items: center;
+  gap: 1.5em;
+}
+nav .avatar-container img {
+  width: 2em;
+}
+nav .separator {
+  width: 100%;
+  height: 1px;
+  background: #5AE4A8;
+}
+nav .navigation {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5em;
+}
+nav .navigation li {
+  width: 100%;
+}
+nav .navigation li a {
+  text-decoration: none;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+nav .navigation li a span {
+  font-size: small;
+}
+nav .navigation li :hover {
+  color: #5AE4A8;
+}
+nav .navigation svg {
+  min-width: 2em;
+}
+nav span {
+  font-size: smaller;
+  min-width: 6em;
+  display: none;
+}
+
+nav:hover {
+  width: 12em;
+}
+nav:hover span {
+  display: block;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4em;
+}
+
+main {
+  text-align: center;
+  width: 95%;
+}
+
+.table-title {
+  color: #5AE4A8;
+  margin: 1em;
+}
+
+.table-container {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 1fr 1fr 0.7fr;
+  border: 0.1em solid #5AE4A8;
+  border-radius: 0.5em;
+}
+.table-container .table-cell {
+  border: 0.06em solid #5AE4A8;
+  height: 5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.table-container .table-head {
+  font-size: larger;
+  font-weight: bold;
+  height: 3em;
+}
+.table-container > div:first-child {
+  border-radius: 0.25em 0 0 0;
+}
+.table-container > div:nth-child(5) {
+  border-radius: 0 0.25em 0 0;
+}
+.table-container > div:nth-child(41) {
+  border-radius: 0 0 0 0.25em;
+}
+.table-container > div:last-child {
+  border-radius: 0 0 0.25em 0;
+}
+
+.page-navigation-container {
+  margin-top: 3em;
+  height: 1.3em;
+  color: #5AE4A8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+.page-navigation-container .current-page {
+  border-bottom: 0.15em solid #5AE4A8;
+}
+
+/*# sourceMappingURL=main.css.map */

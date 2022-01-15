@@ -1,0 +1,70 @@
+nav {
+  position: fixed;
+  left: 0;
+  top: 23%;
+  height: 16em;
+  width: 4em;
+  background: $light;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  overfolow: hidden;
+  transition: width .2s ease-in;
+
+  .avatar-container {
+    width: 100%;
+    display: inherit;
+    align-items: center;
+    gap: 1.5em;
+
+    img {
+      width: 2em;
+    }
+  }
+  .separator {
+    width: 100%;
+    height: 1px;
+    background: $primary;
+  }
+  .navigation {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+    li {
+      width: 100%;
+      a {
+        text-decoration: none;
+        color: $dark;
+        display: flex;
+        align-items: center;
+        gap: 2em;
+        span {
+          font-size: small;
+        }
+      }
+      :hover {
+        color: $primary;
+      }
+    }
+    svg {
+      min-width: 2em;
+    }
+  }
+  span {
+    font-size: smaller;
+    min-width: 6em;
+    display: none;
+  }
+}
+nav:hover {
+  width: 12em;
+  span {
+    display: block;
+  }
+}
+
