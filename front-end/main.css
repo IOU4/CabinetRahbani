@@ -99,14 +99,15 @@ nav .navigation svg {
 nav span {
   font-size: smaller;
   min-width: 6em;
-  display: none;
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
 }
 
 nav:hover {
   width: 12em;
 }
 nav:hover span {
-  display: block;
+  opacity: 1;
 }
 
 body {
