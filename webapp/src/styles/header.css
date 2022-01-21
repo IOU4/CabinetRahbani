@@ -1,0 +1,38 @@
+/* header start  ===================================================================================*/
+header {
+  display: flex;
+  padding: 1em 2em 1em 0;
+  justify-content: space-between;
+  align-items: center;
+  height: 4em;
+  width: 100%;
+  background: var(--light);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+header .logo-container {
+  width: max(11em, 25%);
+}
+header .logo-container img {
+  width: 100%;
+}
+header .contact-info {
+  display: flex;
+  gap: 1em;
+}
+header .contact-info div {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+}
+header span {
+  font-size: smaller;
+}
+
+@media (max-width: 767px) {
+  header .contact-info span {
+    display: none;
+  }
+}
+/* header end ===================================================================================*/
