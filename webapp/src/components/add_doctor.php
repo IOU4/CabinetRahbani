@@ -1,5 +1,6 @@
 <h1 class='table-title'>Add Doctor</h1>
 <form action="index.php" method="post" class="form">
+<!-- TODO: make condition on $_GET['id'] -->
   <input type="hidden" name="id" value="<?php echo $_GET['id']?>"/>
   <input type="text" name='nom' placeholder="nom" required/>
   <input type="text" name='prenom' placeholder="prenom" required/>

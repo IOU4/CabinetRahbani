@@ -6,7 +6,7 @@
 <section class="table-container">
   <div class = 'table-row table-head'>
     <?php
-      $columns_names->data_seek(1);
+      $columns_names->field_seek(2);
       while ($column = $columns_names->fetch_assoc()):
           echo "<div>".$column['Field']."</div>";
       endwhile;
@@ -14,9 +14,9 @@
     ?>
   </div>
   <?php
-      while ($row = $rows->fetch_array()):
+      while ($row = $rows->fetch_array(MYSQLI_NUM)):
          echo "<div class='table-row'>";
-         for ($i = 1; $i<count($row)&&$row[$i]; $i++) {
+         for ($i = 1; $i<count($row); $i++) {
              echo "<div>$row[$i]</div>";
          }
          echo "  <div>
