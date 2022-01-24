@@ -1,4 +1,10 @@
-<?php include './database/conn.php'; ?>
+<?php 
+  if(isset($_GET['t']))
+    $table = $_GET['t'];
+  elseif(!isset($table))
+    $table = 'doctors';
+  include './database/conn.php'; 
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,14 +24,17 @@
     </nav>
     <main>
     <?php
-      if (isset($_GET['delete-doctor'])) {
-          remove_doctor($conn, $_GET['id']);
+      if (isset($_GET['delete'])) {
+          remove_doctor($conn, $table, $_GET['id']);
       } elseif (!empty($_POST['id'])) {
-          update_doctor($conn, $_POST['id'], $_POST['nom'], $_POST['prenom'], $_POST['naissance'], $_POST['speciality']);
+          update_doctor($conn, $table, $_POST);
       } elseif (!empty($_POST['nom'])) {
-          add_doctor($conn, $_POST['nom'], $_POST['prenom'], $_POST['naissance'], $_POST['speciality']);
+          add_doctor($conn, $table, $_POST);
       }
-      if (isset($_GET['add-doctor'])) {
+
+      if (isset($_GET['add'])) {
+          include './src/components/add_doctor.php';
+      } elseif(isset($_GET['update'])) {
           include './src/components/add_doctor.php';
       } else {
           include './src/components/dashboard.php';
