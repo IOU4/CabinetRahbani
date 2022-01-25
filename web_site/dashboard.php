@@ -13,20 +13,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CabinetRahbani-dashboard</title>
     <link rel="stylesheet" href="./src/styles/main.css" />
-    <link rel="stylesheet" href="./src/styles/header.css" />
-    <link rel="stylesheet" href="./src/styles/footer.css" />
-    <link rel="stylesheet" href="./src/styles/sidebar.css" />
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
   </head>
   <body>
-    <header>
-      <?php include './src/components/header.php'; ?>
-    </header>
-    <nav>
-      <?php include './src/components/sidebar.php'; ?>
-    </nav>
-    <main>
     <?php
+      // header
+      include '../components/header.php';
+
+      // sidebar
+      include './src/components/sidebar.php';
+    
+      // main
       if (isset($_GET['delete'])) {
           remove_from_table($conn, $table, $_GET['id']);
       } elseif (!empty($_POST['id'])) {
@@ -35,17 +32,13 @@
           add_to_table($conn, $table, $_POST);
       }
 
-      if (isset($_GET['add'])) {
-          include './src/components/form.php';
-      } elseif(isset($_GET['update'])) {
+      if (isset($_GET['add']) || isset($_GET['update'])) {
           include './src/components/form.php';
       } else {
-          include './src/components/dashboard.php';
+          include './src/components/main.php';
       }
-    ?>
-    </main>
-    <footer>
-      <?php include './src/components/footer.php'; ?>
-    </footer>
+
+      // footer
+      include '../components/footer.php'; ?>
   </body>
 </html>
