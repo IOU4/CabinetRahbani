@@ -2,7 +2,7 @@
   if(isset($_GET['t']))
     $table = $_GET['t'];
   elseif(!isset($table))
-    $table = 'test';
+    $table = 'doctors';
   include './database/conn.php'; 
 ?>
 <!DOCTYPE html>
@@ -36,9 +36,9 @@
       }
 
       if (isset($_GET['add'])) {
-          include './src/components/add_doctor.php';
+          include './src/components/form.php';
       } elseif(isset($_GET['update'])) {
-          include './src/components/add_doctor.php';
+          include './src/components/form.php';
       } else {
           include './src/components/dashboard.php';
       }

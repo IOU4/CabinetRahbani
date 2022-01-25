@@ -1,5 +1,5 @@
 <?php
-     $rows = $conn->query("SELECT * FROM $table") or die(error($conn));
+     $rows = $conn->query("SELECT * FROM $table") or die($conn->error);
  ?>
    <h1 class="table-title"><?php echo $table; ?> :</h1>
 <section class="table-container">

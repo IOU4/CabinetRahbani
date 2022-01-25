@@ -1,9 +1,9 @@
 <?php
 
-  $dbName = 'cabinet';
+  $dbName = 'db';
   $dbHost = 'localhost';
   $dbUser = 'root';
-  $dbPass = 'emad';
+  $dbPass = '';
   $conn = new mysqli($dbHost, $dbUser, $dbPass, $dbName) or die($conn->error);
 
   $result =  $conn->query("DESC $table") or die($conn->error);
