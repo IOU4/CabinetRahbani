@@ -1,6 +1,6 @@
 <?php $table = $_GET['t'];?>
 <h1 class='table-title'><?php if(isset($_GET['id'])) echo "Update $table"; else echo "New $table";?></h1>
-  <form action="index.php?t=<?php echo $table; ?>" method="post" class="form">
+<form action="index.php?t=<?php echo $table; ?>" method="post" class="form">
   <input type="hidden" name="id" value="<?php 
     if(isset($_GET['id']))
       echo $_GET['id'];
@@ -8,7 +8,6 @@
   <?php
     foreach($headers as $i => $head) {
       if($keys[$i] == 'MUL') {
-        
         $tname = $conn->query("SELECT REFERENCED_TABLE_NAME FROM `information_schema`.`KEY_COLUMN_USAGE` WHERE TABLE_NAME = '$table' AND COLUMN_NAME = '$head'");
         $t = $tname->fetch_array(MYSQLI_NUM)[0];
         $res = $conn->query("select * from $t");
