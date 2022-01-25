@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: 1.5fr .5fr;
   place-content: center;
-  height: 98vh;
   width: min(22em, 100%);
   gap: 2em;
   margin-left: 15em;
