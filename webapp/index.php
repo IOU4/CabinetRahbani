@@ -2,7 +2,7 @@
   if(isset($_GET['t']))
     $table = $_GET['t'];
   elseif(!isset($table))
-    $table = 'doctors';
+    $table = 'test';
   include './database/conn.php'; 
 ?>
 <!DOCTYPE html>
@@ -13,6 +13,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CabinetRahbani-dashboard</title>
     <link rel="stylesheet" href="./src/styles/main.css" />
+    <link rel="stylesheet" href="./src/styles/header.css" />
+    <link rel="stylesheet" href="./src/styles/footer.css" />
+    <link rel="stylesheet" href="./src/styles/sidebar.css" />
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
   </head>
   <body>
@@ -25,11 +28,11 @@
     <main>
     <?php
       if (isset($_GET['delete'])) {
-          remove_doctor($conn, $table, $_GET['id']);
+          remove_from_table($conn, $table, $_GET['id']);
       } elseif (!empty($_POST['id'])) {
-          update_doctor($conn, $table, $_POST);
-      } elseif (!empty($_POST['nom'])) {
-          add_doctor($conn, $table, $_POST);
+          update_in_table($conn, $table, $_POST);
+      } elseif (!empty($_POST["$headers[0]"])) {
+          add_to_table($conn, $table, $_POST);
       }
 
       if (isset($_GET['add'])) {

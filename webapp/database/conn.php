@@ -10,12 +10,14 @@
   $result->data_seek(1);
   $headers = array();
   $types = array();
+  $keys = array();
   while ($column = $result->fetch_assoc()):
     $headers[] = $column['Field'];
     $types[] = $column['Type'];
+    $keys[] = $column['Key'];
   endwhile;     
 
-  function add_doctor($conn, $table, $array)
+  function add_to_table($conn, $table, $array)
   {
       foreach( $array as $field => $value)
         if($value){
@@ -27,7 +29,7 @@
       $query = "INSERT INTO $table ($fields) VALUES ($values);";
       $conn->query($query) or die($conn->error);
   }
-  function update_doctor($conn, $table, $array)
+  function update_in_table($conn, $table, $array)
   {
       $id = 0;
       $attributes = array();
@@ -45,7 +47,7 @@
       $conn->query($query) or die($conn->error);
   }
 
-  function remove_doctor($conn, $table, $id)
+  function remove_from_table($conn, $table, $id)
   {
       $query = "DELETE FROM $table WHERE id = $id";
       $conn->query($query) or die($conn->error);
