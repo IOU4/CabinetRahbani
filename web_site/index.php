@@ -4,17 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion de Cabinet</title>
-    <link rel="shortcut icon" href="assets/ico.ico"/>
-    <link rel="stylesheet" href="styles/home.css">
-    <link rel="stylesheet" href="styles/login.css">
-    <link rel="stylesheet" href="styles/footer.css">
-    <link rel="stylesheet" href="styles/header.css">
-    <link rel="stylesheet" href="styles/normalise.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Cabinet Rahabni</title>
+    <link rel="shortcut icon" href="./src/assets/ico.ico"/>
+    <link rel="stylesheet" href="./src/styles/home/base.css" type="text/css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- start header -->
@@ -30,10 +23,15 @@
             </div>
         </div>
     </div> -->
-    <?php include './components/header.php';?>
+    <?php include './src/components/header.php';?>
     <!-- start header -->
     <!-- start content -->   
-    <?php include './components/home.php';?>
+    <?php 
+      if(isset($_GET['login']))
+        include './src/components/home/login.php';
+      else
+        include './src/components/home/home.php';
+    ?>
     <!-- end content -->
     <!-- start footer -->
     <!-- <div class="footer">
@@ -53,7 +51,7 @@
             </p>
         </div>
     </div> -->
-    <?php include'./components/footer.php'; ?>
+    <?php include'./src/components/footer.php'; ?>
     <!-- end footer -->
 </body>
 </html>

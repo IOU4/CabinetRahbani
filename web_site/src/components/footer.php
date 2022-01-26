@@ -1,7 +1,6 @@
-<footer class="footer">
+<footer>
     <div class="container">
-        <img src="./assets/logo.png" class="logo" alt="cabinet rahbani logo"/>
-        <p>WE ARE SOCIAL</p>
+        <img src="./src/assets/logo2.png" class="logo" alt="cabinet rahbani logo"/>
         <div class="social-icons">
             <i class="fas fa-globe"></i>
             <i class="fab fa-instagram"></i>

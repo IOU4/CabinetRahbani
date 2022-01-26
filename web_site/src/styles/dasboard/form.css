@@ -11,10 +11,14 @@
   border: .1em solid var(--primary);
   border-radius: .5em;
   padding: .4em 1em ;
-}
-input[type="text"], input[type="date"], input[type='number'], select {
   grid-column: 1/ 3;
   background: transparent;
+}
+input[type="submit"]{
+  grid-column: 1/2;
+}
+input[type="button"]{
+  grid-column: unset;
 }
 .btn {
   border: 0.15em var(--primary) solid;
