@@ -1,29 +1,24 @@
 <main>
-  <?php
-       $rows = $conn->query("SELECT * FROM $table") or die($conn->error);
-   ?>
-  <h1 class="table-title"><?php echo $table; ?> :</h1>
+  <?php $rows = $conn->query("SELECT * FROM $table") or die($conn->error); ?>
+  <h1 class="table-title"><?=ucfirst($table)?> :</h1>
   <section class="table-container">
     <div class = 'table-row table-head'>
-      <?php
-        foreach($headers as $thead)
-          echo "<div>$thead</div>";
-        echo "<div>Operations</div>";
-      ?>
+      <?php foreach($headers as $thead):?>
+        <div><?=ucfirst($thead)?></div>
+      <?php endforeach; ?>
+      <div>Operations</div>
     </div>
-    <?php
-        while ($row = $rows->fetch_array(MYSQLI_NUM)):
-           echo "<div class='table-row'>";
-           for ($i = 1; $i<count($row); $i++) {
-               echo "<div>$row[$i]</div>";
-           }
-           echo "  <div>
-                       <a href='?update&id=".$row[0]."&t=$table"."'><svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' role='img' width='1em' height='1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'><g fill='none'><path d='M16.474 5.408l2.118 2.117m-.756-3.982L12.109 9.27a2.118 2.118 0 0 0-.58 1.082L11 13l2.648-.53c.41-.082.786-.283 1.082-.579l5.727-5.727a1.853 1.853 0 1 0-2.621-2.621z' stroke='#5ae4a8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/><path d='M19 15v3a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3' stroke='#5ae4a8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></g></svg></a>
-                       <a href='?delete&id=".$row[0]."&t=$table"."'><svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' role='img' width='1em' height='1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'><g fill='none'><path d='M15 15L9 9m6 0l-6 6' stroke='#5ae4a8' stroke-width='2' stroke-linecap='round'/><circle cx='12' cy='12' r='10' stroke='#5ae4a8' stroke-width='2'/></g></svg></a>
-                   </div>
-                 </div>";
-        endwhile;
-    ?>
+      <?php while ($row = $rows->fetch_array(MYSQLI_NUM)): ?>
+        <div class='table-row'>
+          <?php for ($i = 1; $i<count($row); $i++) { ?>
+          <div><?=$row[$i]?></div>
+          <?php } ?>
+          <div>
+            <a href='?update&id=<?=$row[0]?>&t=<?=$table?>'><svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' role='img' width='1em' height='1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'><g fill='none'><path d='M16.474 5.408l2.118 2.117m-.756-3.982L12.109 9.27a2.118 2.118 0 0 0-.58 1.082L11 13l2.648-.53c.41-.082.786-.283 1.082-.579l5.727-5.727a1.853 1.853 0 1 0-2.621-2.621z' stroke='#5ae4a8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/><path d='M19 15v3a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3' stroke='#5ae4a8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></g></svg></a>
+            <a href='?delete&id=<?=$row[0]?>&t=<?=$table?>'><svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' role='img' width='1em' height='1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'><g fill='none'><path d='M15 15L9 9m6 0l-6 6' stroke='#5ae4a8' stroke-width='2' stroke-linecap='round'/><circle cx='12' cy='12' r='10' stroke='#5ae4a8' stroke-width='2'/></g></svg></a>
+          </div>
+        </div>
+      <?php endwhile;?>
   </section>
   <section class="page-navigation-container">
     <svg

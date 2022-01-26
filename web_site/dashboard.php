@@ -1,9 +1,7 @@
 <?php 
-  if(isset($_GET['t']))
-    $table = $_GET['t'];
-  elseif(!isset($table))
-    $table = 'doctors';
-  include './database/conn.php'; 
+  if(isset($_GET['t'])) $table = $_GET['t'];
+  elseif(!isset($table)) $table = 'doctors';
+  require './database/conn.php'; 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +26,7 @@
           remove_from_table($conn, $table, $_GET['id']);
       } elseif (!empty($_POST['id'])) {
           update_in_table($conn, $table, $_POST);
-      } elseif (!empty($_POST["$headers[0]"])) {
+      } elseif (!empty($_POST["'$headers[0]'"])) {
           add_to_table($conn, $table, $_POST);
       }
 
@@ -42,3 +40,4 @@
       include './src/components/footer.php'; ?>
   </body>
 </html>
+<?php $conn->close(); ?>

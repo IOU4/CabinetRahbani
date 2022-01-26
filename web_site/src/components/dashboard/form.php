@@ -1,7 +1,7 @@
 <main>
   <?php $table = $_GET['t'];?>
   <h1 class='table-title'><?php if(isset($_GET['id'])) echo "Update $table"; else echo "New $table";?></h1>
-  <form action="dashboard.php?t=<?php echo $table; ?>" method="post" class="form">
+  <form action="dashboard.php?t=<?=$table?>" method="post" class="form">
     <input type="hidden" name="id" value="<?php 
       if(isset($_GET['id']))
         echo $_GET['id'];
