@@ -30,6 +30,7 @@ main > * {
 .section-2 {
   grid-template-columns: .8fr 1.2fr;
   border-radius: 0.3em;
+  border: .2em solid var(--primary);
 }
 .section-1 h1 {
   grid-column: 1/3;
