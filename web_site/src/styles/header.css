@@ -9,6 +9,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 10;
 }
 header .logo-container {
   width: max(11em, 25%);
@@ -28,10 +29,20 @@ header .contact-info div {
 header span {
   font-size: smaller;
 }
+.bttn {
+  border-radius: 0.3em;
+  color: white;
+  background: var(--primary);
+  padding: 0.5em;
+  font-size: smaller;
+  font-weight: bold;
+  padding: .6em;
+  width: 5em;
+  text-align: center;
+}
 
 @media (max-width: 767px) {
-  header .contact-info span {
+  header .contact-info span, header .bttn {
     display: none;
   }
 }
-/* header end ===================================================================================*/

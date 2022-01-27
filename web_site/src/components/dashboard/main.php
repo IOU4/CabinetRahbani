@@ -55,6 +55,6 @@
         fill="#5ae4a8"
       />
     </svg>
-    <a href="<?php echo "?add&t=$table";?>"><div class="add-button">New</div></a>
+    <a href="<?php echo "?add&t=$table";?>"><div>New</div></a>
   </section>
 </main>

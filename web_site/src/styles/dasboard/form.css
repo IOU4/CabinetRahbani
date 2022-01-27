@@ -31,7 +31,9 @@ input[type="button"]{
   color: var(--primary);
   background: transparent;
 }
-
+.bttn {
+  display: none;
+}
 @media (max-width: 767px) {
   .form {
     margin : 0;
