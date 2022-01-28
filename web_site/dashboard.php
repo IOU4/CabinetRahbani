@@ -22,15 +22,16 @@
       include './src/components/dashboard/sidebar.php';
     
       // main
-      if (isset($_GET['delete']))  remove_from_table($conn, $table, $_GET['id']);
-      elseif (!empty($_POST['id'])) update_in_table($conn, $table, $_POST);
-      elseif (!empty($_POST["$headers[0]"])) add_to_table($conn, $table, $_POST);
+      if (isset($_GET['delete']))  remove_from_table($table, $_GET['id']);
+      elseif (!empty($_POST['id'])) update_in_table($table, $_POST);
+      elseif (!empty($_POST["$headers[0]"])) add_to_table($table, $_POST);
 
       if (isset($_GET['add']) || isset($_GET['update'])) include './src/components/dashboard/form.php';
       else include './src/components/dashboard/main.php';
 
       // footer
-      include './src/components/footer.php'; ?>
+      include './src/components/footer.php'; 
+    ?>
   </body>
 </html>
 <?php $conn->close(); ?>
